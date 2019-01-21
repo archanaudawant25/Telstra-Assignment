@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">My Application</string>
+    <string name="title_activity_country_details">CountryDetailsActivity</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="image_content_desc">Country Image </string>
+</resources>
