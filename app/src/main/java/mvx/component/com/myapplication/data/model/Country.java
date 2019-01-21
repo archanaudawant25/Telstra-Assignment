@@ -8,12 +8,19 @@ package mvx.component.com.myapplication.data.model;
  *
  */
 
+import com.google.gson.annotations.SerializedName;
+
+import java.util.ArrayList;
+
 public class Country {
 
 
-
+    @SerializedName("title")
     private String countryName;
-    private CountryDetails countryDetails;
+
+    @SerializedName("rows")
+    private ArrayList<CountryDetails> countryDetails;
+
 
     public String getCountryName() {
         return countryName;
@@ -23,11 +30,13 @@ public class Country {
         this.countryName = countryName;
     }
 
-    public CountryDetails getCountryDetails() {
+    public ArrayList<CountryDetails> getCountryDetails() {
         return countryDetails;
     }
 
-    public void setCountryDetails(CountryDetails countryDetails) {
+    public void setCountryDetails(ArrayList<CountryDetails> countryDetails) {
         this.countryDetails = countryDetails;
     }
+
+
 }

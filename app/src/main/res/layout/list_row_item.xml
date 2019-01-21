@@ -24,7 +24,7 @@
             android:layout_alignParentRight="true">
 
             <ImageView
-                android:id="@+id/img_icon"
+                android:id="@+id/iv_icon"
                 android:layout_width="100dp"
                 android:layout_height="100dp"
                 android:contentDescription="@string/image_content_desc" />
@@ -47,7 +47,7 @@
             android:textAppearance="?attr/textAppearanceListItem" />
 
         <TextView
-            android:id="@+id/text_desc"
+            android:id="@+id/tv_desc"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/tv_title"
