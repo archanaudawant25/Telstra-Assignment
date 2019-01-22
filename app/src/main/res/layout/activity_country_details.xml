@@ -20,7 +20,12 @@
 
     </android.support.design.widget.AppBarLayout>
 
-    <include layout="@layout/content_country_details" />
+   <!--<include layout="@layout/content_country_details">-->
+    <FrameLayout
+        android:id="@+id/fl_country_frag_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"/>
 
 
 

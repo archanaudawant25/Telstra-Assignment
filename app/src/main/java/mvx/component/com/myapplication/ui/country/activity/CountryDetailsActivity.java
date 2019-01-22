@@ -3,6 +3,7 @@ package mvx.component.com.myapplication.ui.country.activity;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.widget.FrameLayout;
 
 import mvx.component.com.myapplication.R;
 import mvx.component.com.myapplication.ui.country.fragment.CountryDetailsActivityFragment;
@@ -16,13 +17,14 @@ public class CountryDetailsActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        if(null == savedInstanceState){
+
+       // if(null == savedInstanceState){
             CountryDetailsActivityFragment countryDetailsActivityFragment =
                     new CountryDetailsActivityFragment();
             getSupportFragmentManager().beginTransaction()
-                    .add(R.id.fragment_country_details , countryDetailsActivityFragment
+                    .add(R.id.fl_country_frag_container , countryDetailsActivityFragment
                             ,"Country").commit();
-        }
+       // }
         //This is to check git working
 
     }

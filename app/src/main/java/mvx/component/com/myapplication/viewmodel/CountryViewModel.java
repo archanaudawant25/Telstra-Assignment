@@ -26,7 +26,6 @@ public class CountryViewModel extends ViewModel {
     }
 
     private void loadCountryDetail() {
-
         final CountryDetailsApiInterface countryDetailsApiInterface =
                 CountryDetailsApiClient.getClient().create(CountryDetailsApiInterface.class);
 
@@ -46,6 +45,4 @@ public class CountryViewModel extends ViewModel {
 
 
     }
-
-
 }

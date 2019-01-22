@@ -12,19 +12,11 @@
         android:id="@+id/rv_country_details_list"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:visibility="visible"
         tools:listitem="@layout/list_row_item" />
 
-</android.support.v4.widget.SwipeRefreshLayout>
-<!--
-<android.support.constraint.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".ui.country.activity.CountryDetailsActivityFragment"
-    tools:showIn="@layout/activity_country_details">
 
-</android.support.constraint.ConstraintLayout>-->
+</android.support.v4.widget.SwipeRefreshLayout>
+
 
 

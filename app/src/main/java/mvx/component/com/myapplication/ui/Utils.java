@@ -10,15 +10,10 @@ public class Utils {
 
         ConnectivityManager connectivityManager = (ConnectivityManager) context
                 .getSystemService(Context.CONNECTIVITY_SERVICE);
-
         NetworkInfo activeNetwork = null;
         if (null != connectivityManager) {
             activeNetwork = connectivityManager.getActiveNetworkInfo();
         }
-
-
         return activeNetwork != null && activeNetwork.isConnected();
-
-
     }
 }
