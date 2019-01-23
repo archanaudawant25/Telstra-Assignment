@@ -1,8 +1,7 @@
 package mvx.component.com.myapplication.ui.country.adapter;
 
-
 /*
- *  It is CountryDetailsAdapter class.
+ * It is CountryDetailsAdapter class.
  * This class is used to set up the UI for the Country details data.
  */
 
@@ -15,11 +14,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
-import android.widget.ProgressBar;
 import android.widget.TextView;
-
-import com.bumptech.glide.Glide;
-import com.bumptech.glide.request.RequestOptions;
 
 import java.util.ArrayList;
 
@@ -29,17 +24,14 @@ import mvx.component.com.myapplication.ui.GlideApp;
 
 public class CountryDetailsAdapter extends RecyclerView.Adapter
         <CountryDetailsAdapter.CountryDetailsViewHolder> {
-
     private ArrayList<CountryDetails> countryDetailsList;
     private Context context;
 
     //Constructor to initialise variables
-
     public CountryDetailsAdapter(Context context, ArrayList<CountryDetails> countryDetailsList) {
         this.context = context;
         this.countryDetailsList = countryDetailsList;
     }
-
 
     @NonNull
     @Override
@@ -70,41 +62,40 @@ public class CountryDetailsAdapter extends RecyclerView.Adapter
 
         if (!TextUtils.isEmpty(countryDetails.getCountryPropertyImageUrl())) {
             holder.ivFrameLayout.setVisibility(View.VISIBLE);
-           // holder.ivCountryPropertyIcon.setVisibility(View.VISIBLE);
-           // holder.progressBar.setVisibility(View.VISIBLE);
-
             GlideApp.with(context)
                     .load(countryDetails.getCountryPropertyImageUrl())
+                    .override(300, 200)
                     .fitCenter()
-                    .override(300, 300)
-                    .into(holder.ivCountryPropertyIcon );
-
-
-           // holder.progressBar.setVisibility(View.GONE);
-
+                    .centerCrop()
+                    .into(holder.ivCountryPropertyIcon);
         } else {
             holder.ivFrameLayout.setVisibility(View.GONE);
         }
-
     }
 
+    /*
+     * @return size of list.
+     */
     @Override
     public int getItemCount() {
         return countryDetailsList.size();
     }
 
+    /*
+     * Method to update the UI on data change
+     */
     public void updateView(ArrayList<CountryDetails> countryDetailsList) {
-
         this.countryDetailsList = countryDetailsList;
         notifyDataSetChanged();
     }
 
+    /*
+     * A ViewHolder describe item view components.
+     */
     class CountryDetailsViewHolder extends RecyclerView.ViewHolder {
-
         private final TextView tvTitle;
         private final TextView tvDesc;
         private final ImageView ivCountryPropertyIcon;
-        private final ProgressBar progressBar;
         private final FrameLayout ivFrameLayout;
 
         CountryDetailsViewHolder(@NonNull View itemView) {
@@ -112,7 +103,6 @@ public class CountryDetailsAdapter extends RecyclerView.Adapter
             this.tvTitle = itemView.findViewById(R.id.tv_title);
             this.tvDesc = itemView.findViewById(R.id.tv_desc);
             this.ivCountryPropertyIcon = itemView.findViewById(R.id.iv_icon);
-            this.progressBar = itemView.findViewById(R.id.progressBar);
             this.ivFrameLayout = itemView.findViewById(R.id.frame_layout);
         }
     }
