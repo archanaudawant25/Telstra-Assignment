@@ -33,6 +33,7 @@ public class CountryViewModel extends ViewModel {
         if (countryDetails == null) {
             countryDetails = new MutableLiveData<>();
         }
+
         loadCountryDetail();
         return countryDetails;
     }
@@ -51,7 +52,6 @@ public class CountryViewModel extends ViewModel {
 
             @Override
             public void onFailure(@NonNull Call<Country> call, @NonNull Throwable t) {
-                countryDetails.setValue(null);
             }
         });
     }
