@@ -10,18 +10,29 @@ import android.arch.lifecycle.MutableLiveData;
 import android.arch.lifecycle.ViewModel;
 import android.support.annotation.NonNull;
 
+import javax.inject.Inject;
+
+import mvx.component.com.myapplication.data.di.DaggerRetrofitComponent;
+import mvx.component.com.myapplication.data.di.RetrofitComponent;
 import mvx.component.com.myapplication.data.model.Country;
-import mvx.component.com.myapplication.data.remote.CountryDetailsApiInterface;
-import mvx.component.com.myapplication.data.remote.apiservices.CountryDetailsApiClient;
+import mvx.component.com.myapplication.data.remote.api.CountryDetailsApiInterface;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
 public class CountryViewModel extends ViewModel {
 
+    RetrofitComponent retrofitComponent;
+
+    @Inject
+    CountryDetailsApiInterface countryDetailsApiInterface;
     private MutableLiveData<Country> countryDetails;
 
+
     public LiveData<Country> getCountryData() {
+
+        retrofitComponent = DaggerRetrofitComponent.builder().build();
+        retrofitComponent.injectRetrofit(this);
         if (countryDetails == null) {
             countryDetails = new MutableLiveData<>();
         }
@@ -33,8 +44,6 @@ public class CountryViewModel extends ViewModel {
      * Method to load country details from server.
      */
     private void loadCountryDetail() {
-        final CountryDetailsApiInterface countryDetailsApiInterface =
-                CountryDetailsApiClient.getClient().create(CountryDetailsApiInterface.class);
 
         Call<Country> call = countryDetailsApiInterface.getCountryData();
         call.enqueue(new Callback<Country>() {
