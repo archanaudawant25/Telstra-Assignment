@@ -43,6 +43,8 @@ public class CountryDetailsActivityFragment extends Fragment {
     private Context context;
     private CountryInterface countryInterface;
 
+    public static final String TAG = "country_details_fragment";
+
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {

@@ -25,7 +25,7 @@ public class CountryDetailsActivity extends AppCompatActivity implements Country
                     new CountryDetailsActivityFragment();
             getSupportFragmentManager().beginTransaction()
                     .replace(R.id.fl_country_frag_container, countryDetailsActivityFragment
-                            , "Country").commit();
+                            , CountryDetailsActivityFragment.TAG).commit();
         }
     }
     
