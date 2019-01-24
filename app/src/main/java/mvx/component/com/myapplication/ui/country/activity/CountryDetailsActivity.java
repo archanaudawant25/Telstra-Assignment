@@ -10,8 +10,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 
 import mvx.component.com.myapplication.R;
-import mvx.component.com.myapplication.data.di.DaggerRetrofitComponent;
-import mvx.component.com.myapplication.data.di.RetrofitComponent;
 import mvx.component.com.myapplication.ui.country.CountryInterface;
 import mvx.component.com.myapplication.ui.country.fragment.CountryDetailsActivityFragment;
 
@@ -30,8 +28,7 @@ public class CountryDetailsActivity extends AppCompatActivity implements Country
                             , "Country").commit();
         }
     }
-
-
+    
     @Override
     public void finishActivity() {
         finish();

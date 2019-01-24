@@ -21,16 +21,13 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 public class CountryViewModel extends ViewModel {
-
-    RetrofitComponent retrofitComponent;
-
     @Inject
     CountryDetailsApiInterface countryDetailsApiInterface;
+
+    RetrofitComponent retrofitComponent;
     private MutableLiveData<Country> countryDetails;
 
-
     public LiveData<Country> getCountryData() {
-
         retrofitComponent = DaggerRetrofitComponent.builder().build();
         retrofitComponent.injectRetrofit(this);
         if (countryDetails == null) {
@@ -44,7 +41,6 @@ public class CountryViewModel extends ViewModel {
      * Method to load country details from server.
      */
     private void loadCountryDetail() {
-
         Call<Country> call = countryDetailsApiInterface.getCountryData();
         call.enqueue(new Callback<Country>() {
             @Override

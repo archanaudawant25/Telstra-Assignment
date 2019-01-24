@@ -12,11 +12,8 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 import static mvx.component.com.myapplication.data.remote.ApiConstants.BASE_URL;
 
-//consider it is retrofit module
-
 @Module
 public class CountryRetrofitModule {
-
 
     @Provides
     CountryDetailsApiInterface getApiInterface(Retrofit retrofit){
