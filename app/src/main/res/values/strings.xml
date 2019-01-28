@@ -8,4 +8,5 @@
     <string name="no_internet_connection">No network available.</string>
     <string name="title_alert">Alert</string>
     <string name="ok">Ok</string>
+    <string name="screen_title_about_canada">About Canada</string>
 </resources>
